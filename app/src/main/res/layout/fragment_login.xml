@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    >
+
+
+    <ImageView
+        android:layout_width="@dimen/dim_100dp"
+        android:layout_height="@dimen/dim_120dp"
+        android:id="@+id/login_fragment_iv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/dim_30dp"
+        android:src="@drawable/logoo"
+        />
+
+    <EditText
+        android:id="@+id/login_fragment_phone"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_40dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_30dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:background="@drawable/rectangle"
+        android:textColorHint="@color/black"
+        android:cursorVisible="true"
+        android:hint="phone"
+        android:inputType="number"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_fragment_iv" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_40dp"
+        android:id="@+id/login_fragment_password"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_fragment_phone"
+        android:background="@drawable/rectangle"
+        android:textColorHint="@color/black"
+        android:hint="password"
+        android:inputType="numberPassword"
+        android:textColor="@color/black"
+        android:paddingStart="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:textSize="@dimen/txt_15sp"
+
+        />
+
+    <CheckBox
+        android:id="@+id/login_fragment_cb"
+        android:layout_width="@dimen/dim_32dp"
+        android:layout_height="@dimen/dim_32dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/login_fragment_tv_remember"
+        app:layout_constraintTop_toTopOf="@id/login_fragment_tv_remember" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_40dp"
+        android:id="@+id/login_fragment_tv_remember"
+        app:layout_constraintTop_toBottomOf="@id/login_fragment_password"
+        app:layout_constraintEnd_toStartOf="@id/login_fragment_cb"
+        android:layout_marginTop="@dimen/dim_15dp"
+        android:text="remember me"
+        android:textSize="@dimen/txt_10sp"
+        android:background="@drawable/rectangle"
+        android:gravity="center"
+        android:textColor="@color/black" />
+
+
+    <TextView
+        android:id="@+id/login_fragment_tv_forget"
+        android:layout_width="@dimen/dim_130dp"
+        android:layout_height="@dimen/dim_40dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/rectangle"
+        android:gravity="center"
+        android:text="@string/forget_password"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_10sp"
+        android:drawableEnd="@drawable/ic_triangle"
+        android:layout_marginTop="@dimen/dim_15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_fragment_password"
+        />
+
+
+    <Button
+        android:id="@+id/login_fragment_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_40dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:background="@color/green"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_fragment_tv_forget"
+
+
+        />
+
+
+    <Button
+        android:id="@+id/login_fragment_btn_new_accout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_40dp"
+        android:background="@color/blue"
+        android:text="@string/create_new_accounnt"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/dim_15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_fragment_login"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/dim_150dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>
+
+
+
+
+
+
+
+

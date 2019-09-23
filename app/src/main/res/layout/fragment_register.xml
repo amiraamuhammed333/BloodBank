@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_fragment_rl_sub_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/register_fragment_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/register_fragment_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/register_fragment_tb"
+        android:layout_alignBottom="@id/register_fragment_tb"
+        android:gravity="center"
+        android:background="@color/white"
+        android:padding="@dimen/dim_8dp"
+        android:text="@string/create_new_accounnt"
+        android:textSize="@dimen/txt_25sp" />
+
+    <ScrollView
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/register_fragment_tv_title"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/register_fragment_et_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:hint="@string/name"
+                android:inputType="text"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/register_fragment_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:hint="Email"
+                android:inputType="textWebEmailAddress"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/register_fragment_et_birth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:hint="@string/birthday"
+                android:inputType="date"
+                android:gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_date"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_email" />
+            
+            <EditText
+                android:id="@+id/register_fragment_et_blood_type"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingTop="@dimen/dim_4dp"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_birth" />
+
+
+            <Spinner
+                android:id="@+id/register_fragment_et_spin1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintBottom_toBottomOf="@id/register_fragment_et_blood_type"
+                app:layout_constraintStart_toStartOf="@id/register_fragment_et_blood_type"
+                app:layout_constraintTop_toTopOf="@id/register_fragment_et_blood_type" />
+
+
+            <TextView
+                android:id="@+id/register_fragment_et_last_date"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:hint="@string/last_donation_date"
+                android:inputType="date"
+                android:gravity="center_vertical"
+                android:drawableEnd="@drawable/ic_date"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_spin1" />
+
+            <EditText
+                android:id="@+id/register_fragment_et_government"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:editable="false"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_last_date" />
+
+
+            <Spinner
+                android:id="@+id/register_fragment_et_spin2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_13sp"
+                app:layout_constraintBottom_toBottomOf="@id/register_fragment_et_government"
+                app:layout_constraintStart_toStartOf="@id/register_fragment_et_government"
+                app:layout_constraintTop_toTopOf="@id/register_fragment_et_government"
+
+                />
+
+
+            <EditText
+                android:id="@+id/register_fragment_et_city"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_government" />
+
+            <Spinner
+                android:id="@+id/register_fragment_et_spin3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_15sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/register_fragment_et_city"
+                app:layout_constraintStart_toStartOf="@id/register_fragment_et_city"
+                app:layout_constraintTop_toTopOf="@id/register_fragment_et_city" />
+
+
+            <EditText
+                android:id="@+id/register_fragment_et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:hint="phone"
+                android:inputType="phone"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_city" />
+
+            <EditText
+                android:id="@+id/register_fragment_et_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:hint="password"
+                android:inputType="numberPassword"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_phone" />
+
+            <EditText
+                android:id="@+id/register_fragment_et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:hint="confirm password"
+                android:inputType="numberPassword"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_password" />
+
+            <Button
+                android:id="@+id/register_fragment_btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:layout_marginBottom="@dimen/dim_8dp"
+                android:background="@color/colorPrimary"
+                android:paddingStart="@dimen/dim_8dp"
+                android:text="login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/register_fragment_et_confirm_password" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

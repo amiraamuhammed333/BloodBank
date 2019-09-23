@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">BloodBank</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dismiss">الغاء</string>
+    <string name="create_new_accounnt">Create New Accounnt</string>
+    <string name="name">name</string>
+    <string name="birthday">birthday</string>
+    <string name="blood_type">blood type</string>
+    <string name="last_donation_date">last donation date</string>
+    <string name="government">government</string>
+    <string name="login">login</string>
+    <string name="forget_password">forget password</string>
+
+
+    <string-array name="blood">
+        <item>  </item>
+        <item>+A</item>
+        <item>-A</item>
+        <item>+B</item>
+        <item>-B</item>
+        <item>+AB</item>
+        <item>-AB</item>
+        <item> +O</item>
+        <item>-O</item>
+
+
+    </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+    <string name="forget_passwoed">forget passwoed</string>
+    <string name="send">send</string>
+    <string name="password_change_code">password change code</string>
+    <string name="new_passowrd">new passowrd</string>
+    <string name="phone">phone</string>
+    <string name="change_passwird">change passwird</string>
+    <string name="information">information</string>
+    <string name="setting_notification">setting notification</string>
+    <string name="home">home</string>
+    <string name="instruction_for_use">instruction for use</string>
+    <string name="search">search</string>
+    <string name="articles">Articles</string>
+    <string name="donation">donation</string>
+    <string name="loading">loading</string>
+    <string name="details">details</string>
+    <string name="call">call</string>
+    <string name="hospital">hospital</string>
+    <string name="city">city</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="warning">warning</string>
+    <string name="message_request_GPS_reason">message_request_GPS_reason</string>
+    <string name="ok">ok</string>
+    <string name="donation_request">donation request</string>
+    <string name="age">age</string>
+    <string name="number_of_bags_required">number of bags required</string>
+    <string name="hospital_address">hospital Address</string>
+
+
+</resources>
