@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/register_fragment_rl_sub_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:fillViewport="true">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_name"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:inputType="text"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:inputType="textWebEmailAddress"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_name" />
+
+            <TextView
+                android:id="@+id/edit_information_fragment_et_birth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:drawableEnd="@drawable/ic_date"
+                android:gravity="center_vertical"
+                android:inputType="date"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_email" />
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_blood_type"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:enabled="true"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingTop="@dimen/dim_4dp"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_birth" />
+
+
+            <Spinner
+                android:id="@+id/edit_information_fragment_et_spin_blood_type"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintBottom_toBottomOf="@id/edit_information_fragment_et_blood_type"
+                app:layout_constraintStart_toStartOf="@id/edit_information_fragment_et_blood_type"
+                app:layout_constraintTop_toTopOf="@id/edit_information_fragment_et_blood_type" />
+
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_last_date"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:drawableEnd="@drawable/ic_date"
+                android:gravity="center_vertical"
+                android:inputType="date"
+                android:paddingStart="@dimen/dim_8dp"
+                android:paddingEnd="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_blood_type" />
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_government"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_40dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:enabled="true"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_last_date" />
+
+
+            <Spinner
+                android:id="@+id/edit_information_fragment_et_spin_government"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_13sp"
+                app:layout_constraintBottom_toBottomOf="@id/edit_information_fragment_et_government"
+                app:layout_constraintStart_toStartOf="@id/edit_information_fragment_et_government"
+                app:layout_constraintTop_toTopOf="@id/edit_information_fragment_et_government"
+
+                />
+
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_city"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:enabled="true"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_government" />
+
+            <Spinner
+                android:id="@+id/edit_information_fragment_et_spin_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textSize="@dimen/txt_15sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/edit_information_fragment_et_city"
+                app:layout_constraintStart_toStartOf="@id/edit_information_fragment_et_city"
+                app:layout_constraintTop_toTopOf="@id/edit_information_fragment_et_city" />
+
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_city" />
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:inputType="numberPassword"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_phone" />
+
+            <EditText
+                android:id="@+id/edit_information_fragment_et_confirm_password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_35dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:background="@drawable/rectangle"
+                android:inputType="numberPassword"
+                android:paddingStart="@dimen/dim_8dp"
+                android:textColorHint="@color/black"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_password" />
+
+            <Button
+                android:id="@+id/edit_information_fragment_btn_edit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dim_50dp"
+                android:layout_marginStart="@dimen/dim_8dp"
+                android:layout_marginTop="@dimen/dim_8dp"
+                android:layout_marginEnd="@dimen/dim_8dp"
+                android:layout_marginBottom="@dimen/dim_8dp"
+                android:background="@color/colorPrimary"
+                android:paddingStart="@dimen/dim_8dp"
+                android:text="save"
+                android:textColor="@color/white"
+                android:textSize="@dimen/txt_15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edit_information_fragment_et_confirm_password" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

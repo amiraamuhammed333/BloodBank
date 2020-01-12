@@ -10,17 +10,27 @@ import android.view.ViewGroup;
 
 import com.example.bloodbank.R;
 import com.example.bloodbank.View.Activity.BaseActivity;
+import com.example.bloodbank.View.Activity.HomeActivity;
 
 public class BaseFragment extends Fragment {
 
     public BaseActivity baseActivity;
+    public HomeActivity homeActivity;
 
-    public void setUpActivity(){
+    public void setUpActivity() {
 
         baseActivity = (BaseActivity) getActivity ();
         baseActivity.baseFragment = this;
 
     }
+
+    public void setUpHomeActivity() {
+
+        homeActivity = (HomeActivity) getActivity ();
+
+    }
+
+
 
     public void onBack() {
         baseActivity.superBackPressed ();

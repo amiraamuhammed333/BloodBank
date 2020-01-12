@@ -47,7 +47,7 @@
     <string name="new_passowrd">new passowrd</string>
     <string name="phone">phone</string>
     <string name="change_passwird">change passwird</string>
-    <string name="information">information</string>
+    <string name="information">my information</string>
     <string name="setting_notification">setting notification</string>
     <string name="home">home</string>
     <string name="instruction_for_use">instruction for use</string>
@@ -67,6 +67,26 @@
     <string name="age">age</string>
     <string name="number_of_bags_required">number of bags required</string>
     <string name="hospital_address">hospital Address</string>
+    <string name="Home_Activity">Home_Activity</string>
+    <string name="number_of_bags">number of bage</string>
+    <string name="hospital_name">hospital name</string>
+    <string name="notes">notes</string>
+    <string name="sending_request">sending request</string>
+    <string name="selsect_location">selsect location</string>
+    <string name="edit_information">Edit Information</string>
+    <string name="o">O+</string>
+    <string name="a1">A-</string>
+    <string name="a">A+</string>
+    <string name="AB">AB</string>
+    <string name="email">email</string>
+    <string name="_01110172222">01110172222</string>
+    <string name="message_address">message address</string>
+    <string name="contact_us">contact us</string>
+    <string name="pin_code">pin code</string>
+    <string name="_01110178315">01110178315</string>
+    <string name="_01097571186">01097571186</string>
+    <string name="message">message</string>
+    <string name="save">save</string>
 
 
 </resources>

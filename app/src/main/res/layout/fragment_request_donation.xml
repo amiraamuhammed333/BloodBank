@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg"
+    >
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_name"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/name"
+        android:textSize="@dimen/txt_15sp"
+        android:textColor="@color/black"
+        android:paddingStart="@dimen/dim_8dp"
+        android:background="@drawable/rectangle"
+        android:inputType="text"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_age"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_name"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/age"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:inputType="number"
+        android:background="@drawable/rectangle"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_blood_type"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_age"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:background="@drawable/rectangle"
+        />
+
+    <Spinner
+        android:id="@+id/fragment_request_donation_spinner_blood_type"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_30dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:textSize="@dimen/txt_15sp"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_request_donation_blood_type"
+        app:layout_constraintEnd_toEndOf="@id/fragment_request_donation_spinner_blood_type"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/fragment_request_donation_blood_type"
+
+        app:layout_constraintTop_toTopOf="@id/fragment_request_donation_blood_type"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_number_of_bags"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_blood_type"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/number_of_bags"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:inputType="number"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+
+        />
+
+
+
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_hospital_name"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_number_of_bags"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/hospital_name"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+
+        />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_hospital_address"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_hospital_name"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/hospital_address"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_hospital_name"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/hospital_address"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+        android:clickable="false"
+
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_location"
+        app:layout_constraintEnd_toEndOf="@id/fragment_request_donation_hospital_address"
+        app:layout_constraintTop_toTopOf="@id/fragment_request_donation_hospital_address"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_request_donation_hospital_address"
+        android:id="@+id/fragment_request_donation_location"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_government"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_hospital_address"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:clickable="false"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+
+        />
+
+
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_spinner_government"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="@id/fragment_request_donation_government"
+        app:layout_constraintEnd_toEndOf="@id/fragment_request_donation_government"
+        app:layout_constraintTop_toTopOf="@id/fragment_request_donation_government"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_request_donation_government"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+
+        />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_city"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_government"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:clickable="false"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+
+        />
+
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_spinner_city"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="@id/fragment_request_donation_government"
+        app:layout_constraintEnd_toEndOf="@id/fragment_request_donation_city"
+        app:layout_constraintTop_toTopOf="@id/fragment_request_donation_city"
+        app:layout_constraintBottom_toBottomOf="@id/fragment_request_donation_city"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+
+        />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_phone"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_city"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/phone"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+        android:inputType="phone"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_notes"
+        android:layout_height="@dimen/dim_100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_phone"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:hint="@string/notes"
+        android:textSize="@dimen/txt_15sp"
+        android:maxLines="5"
+        android:background="@drawable/rectangle"
+        android:textColor="@color/black"
+        android:inputType="text"
+        />
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/fragment_request_donation_sending_request"
+        android:layout_height="@dimen/dim_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fragment_request_donation_notes"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:text="@string/sending_request"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</android.support.constraint.ConstraintLayout>

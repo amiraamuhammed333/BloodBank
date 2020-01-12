@@ -9,10 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.bloodbank.Data.api.APIManger;
-import com.example.bloodbank.Data.model.forget.ForgetPassword;
+import com.example.bloodbank.View.Fragment.Homecycle.HomeFragment;
+import com.example.bloodbank.data.api.APIManger;
 import com.example.bloodbank.R;
 import com.example.bloodbank.View.Fragment.BaseFragment;
+import com.example.bloodbank.data.model.Auth.ClientData;
+import com.example.bloodbank.data.model.Auth.ResetResponse;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -22,10 +24,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.example.bloodbank.data.local.SharedPreference.loadUserData;
+
 public class ChangeNumberFragment extends BaseFragment {
     View view;
-    @BindView(R.id.changenumber_fragment_et_phone)
-    EditText changenumberFragmentEtPhone;
+    @BindView(R.id.changenumber_fragment_et_pin_code)
+    EditText changenumberFragmentEtPinCode;
     @BindView(R.id.changenumber_fragment_et_password)
     EditText changenumberFragmentEtPassword;
     @BindView(R.id.changenumber_fragment_et_confirm_password)
@@ -33,7 +37,7 @@ public class ChangeNumberFragment extends BaseFragment {
     @BindView(R.id.changenumber_fragment_btn_change_password)
     Button changenumberFragmentBtnChangePassword;
     Unbinder unbinder;
-
+    ClientData clientData;
     Fragment fragment;
 
 
@@ -47,6 +51,7 @@ public class ChangeNumberFragment extends BaseFragment {
         // Inflate the layout for this fragment
         view = inflater.inflate ( R.layout.fragment_change_number, container, false );
         unbinder = ButterKnife.bind ( this, view );
+        clientData=loadUserData(getActivity());
         return view;
     }
 
@@ -60,23 +65,56 @@ public class ChangeNumberFragment extends BaseFragment {
         super.onDestroyView ();
         unbinder.unbind ();
     }
-
+    String pinCode,password,confirmPassword;
     @OnClick(R.id.changenumber_fragment_btn_change_password)
     public void onViewClicked(View view) {
 
-        String phone = changenumberFragmentEtPhone.getText ().toString ();
-        String password = changenumberFragmentEtPassword.getText ().toString ();
-        String confirmPassword = changenumberFragmentEtConfirmPassword.getText ().toString ();
+         pinCode = changenumberFragmentEtPinCode.getText ().toString ();
+         password = changenumberFragmentEtPassword.getText ().toString ();
+         confirmPassword = changenumberFragmentEtConfirmPassword.getText ().toString ();
 
-        if(validateLogin(phone, password,confirmPassword)){
+        if(validateLogin(pinCode, password,confirmPassword)){
             //do login
-            confirmPassword (phone,password,confirmPassword);
+            changePassword();
+           // confirmPassword (pincode,password,confirmPassword);
         }
 
 
 
 
 
+    }
+
+    private void changePassword( ) {
+
+        APIManger.getApis().changePassword(clientData.getClient().getPhone(),pinCode,password,confirmPassword)
+                .enqueue(new Callback<ResetResponse>() {
+                    @Override
+                    public void onResponse(Call<ResetResponse> call, Response<ResetResponse> response) {
+                        if(response.isSuccessful ()) {
+
+                            Toast.makeText(getActivity(), response.body().getMsg(), Toast.LENGTH_LONG).show();
+
+                            fragment = new HomeFragment();
+
+
+                            getActivity ()
+                                    .getSupportFragmentManager ()
+                                    .beginTransaction ()
+                                    .replace (R.id.fram,fragment  )
+                                    .commit (); }
+
+                        else{
+                            Toast.makeText ( getActivity (),response.body ().getMsg (),Toast.LENGTH_LONG ).show ();
+
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResetResponse> call, Throwable t) {
+
+                    }
+                });
     }
 
     private boolean validateLogin(String phone, String password, String confirmPassword) {
@@ -103,7 +141,7 @@ public class ChangeNumberFragment extends BaseFragment {
 
 
 
-    private void confirmPassword(String phone, String password, String confirmPassword) {
+ /*   private void confirmPassword(String phone, String password, String confirmPassword) {
         APIManger.getApis ().confirmPassword ( phone,password,confirmPassword ).enqueue ( new Callback<ForgetPassword> () {
             @Override
             public void onResponse(Call<ForgetPassword> call, Response<ForgetPassword> response) {
@@ -142,5 +180,5 @@ public class ChangeNumberFragment extends BaseFragment {
             }
         } );
 
-    }
+    }*/
 }

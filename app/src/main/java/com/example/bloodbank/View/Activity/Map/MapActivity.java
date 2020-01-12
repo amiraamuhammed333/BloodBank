@@ -13,12 +13,13 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.bloodbank.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -26,18 +27,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MapActivity extends AppCompatActivity implements LocationListener, OnMapReadyCallback, View.OnClickListener {
 
     private static final int MY_PERMISSIONS_REQUEST_Access_GPS = 500;
 
-    @BindView(R.id.map_mapview)
-    com.google.android.gms.maps.MapView mapMapview;
-    @BindView(R.id.map_tv_location)
-    TextView mapTvLocation;
-    GoogleMap googleMap;
 
-    Marker marker=null;
+    @BindView(R.id.map_mapview)
+    MapView mapMapview;
+    @BindView(R.id.map_tv_location)
+    Button mapTvLocation;
+    GoogleMap googleMap;
+    MyLocationProvider locationProvider;
+    Location location;
+    Marker marker = null;
+    public static double longitude;
+    public static double latitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +54,6 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
 
         mapMapview.onCreate ( savedInstanceState );
         mapMapview.getMapAsync ( this );
-
-
         if (isGPSPermissionAllowed ()) {
 
             //call your  function
@@ -58,28 +62,29 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
             //request permisssion
             requestLocationPermision ();
         }
-
     }
 
-    public void setMyLocation(){
-        if (location!=null&&googleMap!=null){
+
+    public void setMyLocation() {
+        if (location != null && googleMap != null) {
             LatLng latLng = new LatLng
-                    ( location.getLatitude (),location.getLongitude () );
-            if(marker==null) {
+                    ( location.getLatitude (), location.getLongitude () );
+            if (marker == null) {
                 marker = googleMap.addMarker ( new MarkerOptions ().position ( latLng )
                         .title ( "My Location" )
                 );
-            } else marker.setPosition(latLng);
+            } else marker.setPosition ( latLng );
 
 
+            googleMap.animateCamera ( CameraUpdateFactory.newLatLngZoom ( latLng, 12.0f ) );
 
-            googleMap.animateCamera ( CameraUpdateFactory.newLatLngZoom ( latLng,12.0f ));
 
-        }}
+        }
+    }
 
-    public boolean isGPSPermissionAllowed(){
+    public boolean isGPSPermissionAllowed() {
 
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+        if (ContextCompat.checkSelfPermission ( this, Manifest.permission.ACCESS_FINE_LOCATION )
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
             return false;
@@ -89,20 +94,16 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
     }
 
 
-    MyLocationProvider locationProvider;
-    Location location;
-
-    public void initializeGPS(){
-        Toast.makeText ( this,"GPS ALLOWED",Toast.LENGTH_SHORT ).show ();
+    public void initializeGPS() {
+        Toast.makeText ( this, "GPS ALLOWED", Toast.LENGTH_SHORT ).show ();
         locationProvider = new MyLocationProvider ( this );
         location = locationProvider.getBestLastKnownLocation ();
 
-        if (location==null){
-            Toast.makeText ( this,"cannot get your location",Toast.LENGTH_SHORT ).show ();
-        }
-        else {
-            mapTvLocation.setText ( location.getLatitude ()+""+location.getLongitude () );
-            Log.e ( "location",location.toString () );
+        if (location == null) {
+            Toast.makeText ( this, "cannot get your location", Toast.LENGTH_SHORT ).show ();
+        } else {
+            // mapTvLocation.setText ( location.getLatitude () + "" + location.getLongitude () );
+            Log.e ( "location", location.toString () );
         }
         locationProvider.trackLocation ( this );
     }
@@ -111,31 +112,31 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
     private void requestLocationPermision() {
 
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.ACCESS_FINE_LOCATION)) {
+        if (ActivityCompat.shouldShowRequestPermissionRationale ( this,
+                Manifest.permission.ACCESS_FINE_LOCATION )) {
             // Show an explanation to the user *asynchronously* -- don't block
             // this thread waiting for the user's response! After the user
             // sees the explanation, try again to request the permission.
             //showDialog
 
-            AlertDialog alertDialog = new AlertDialog.Builder(this)
+            AlertDialog alertDialog = new AlertDialog.Builder ( this )
                     .setTitle ( R.string.warning )
                     .setTitle ( R.string.message_request_GPS_reason )
                     .setPositiveButton ( R.string.ok, new DialogInterface.OnClickListener () {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss ();
-                            ActivityCompat.requestPermissions(MapActivity.this,
+                            ActivityCompat.requestPermissions ( MapActivity.this,
                                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                    MY_PERMISSIONS_REQUEST_Access_GPS);
+                                    MY_PERMISSIONS_REQUEST_Access_GPS );
                         }
                     } ).show ();
 
         } else {
             // No explanation needed, we can request the permission.
-            ActivityCompat.requestPermissions(this,
+            ActivityCompat.requestPermissions ( this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                    MY_PERMISSIONS_REQUEST_Access_GPS);
+                    MY_PERMISSIONS_REQUEST_Access_GPS );
 
             // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
             // app-defined int constant. The callback method gets the
@@ -144,8 +145,6 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
 
 
     }
-
-
 
 
     @Override
@@ -174,15 +173,32 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(final GoogleMap googleMap) {
 
-        this.googleMap=googleMap;
+        this.googleMap = googleMap;
         setMyLocation ();
+
+        googleMap.setOnMapClickListener ( new GoogleMap.OnMapClickListener () {
+            @Override
+            public void onMapClick(LatLng latLng) {
+
+                MarkerOptions markerOptions = new MarkerOptions ();
+                markerOptions.position ( latLng );
+                markerOptions.title ( "New Location" );
+                googleMap.clear ();
+                googleMap.animateCamera ( CameraUpdateFactory.newLatLngZoom ( latLng, 12.0f ) );
+
+                latitude = latLng.latitude;
+                longitude = latLng.longitude;
+
+                googleMap.addMarker ( markerOptions );
+
+
+            }
+        } );
 
 
     }
-
-
 
 
     @Override
@@ -224,9 +240,8 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
     @Override
     public void onLocationChanged(Location location) {
 
-
         this.location = location;
-        mapTvLocation.setText ( location.getLatitude ()+""+location.getLongitude () );
+        // mapTvLocation.setText ( location.getLatitude () + "" + location.getLongitude () );
         setMyLocation ();
     }
 
@@ -248,5 +263,11 @@ public class MapActivity extends AppCompatActivity implements LocationListener, 
     @Override
     public void onClick(View view) {
 
+    }
+
+
+    @OnClick(R.id.map_tv_location)
+    public void onViewClicked() {
+        finish ();
     }
 }

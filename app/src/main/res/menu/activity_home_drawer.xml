@@ -9,7 +9,7 @@
             android:icon="@drawable/ic_information"
             android:title="@string/information" />
         <item
-            android:id="@+id/nav_setting"
+            android:id="@+id/nav_notification"
             android:icon="@drawable/ic_notifications"
             android:title="@string/setting_notification" />
         <item
@@ -21,12 +21,6 @@
             android:icon="@drawable/home"
             android:title="@string/home" />
 
-
-        <item
-            android:id="@+id/nav_instruction"
-            android:icon="@drawable/instruction"
-            android:title="@string/instruction_for_use" />
-
         <item
             android:id="@+id/nav_contact"
             android:icon="@drawable/contact"
@@ -36,12 +30,6 @@
             android:id="@+id/nav_about_app"
             android:icon="@drawable/aboutapp"
             android:title="about App" />
-
-
-        <item
-            android:id="@+id/nav_evaluation"
-            android:icon="@drawable/evaluation"
-            android:title="Evaluate the App on the App Store" />
 
         <item
             android:id="@+id/nav_log_out"

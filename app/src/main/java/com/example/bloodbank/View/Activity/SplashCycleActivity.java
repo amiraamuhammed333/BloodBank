@@ -1,12 +1,9 @@
 package com.example.bloodbank.View.Activity;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
 
-import com.example.bloodbank.Helper.HelperMethod;
+import com.example.bloodbank.helper.HelperMethod;
 import com.example.bloodbank.R;
 import com.example.bloodbank.View.Fragment.splashCycle.SplashFragment;
 

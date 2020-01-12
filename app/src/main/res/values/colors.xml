@@ -8,4 +8,6 @@
     <color name="blue">#3597DA</color>
     <color name="grey">#456390AF</color>
     <color name="black">#000</color>
+    <color name="move">#000</color>
+    <color name="red">#000</color>
 </resources>

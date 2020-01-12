@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:background="@color/colorPrimary">
+    android:layout_margin="@dimen/dim_6dp"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/article_adapter_tv_title"
@@ -19,29 +19,25 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:text="1/7/2019" />
 
-    <ImageView
+    <CheckBox
         android:id="@+id/article_adapter_iv_add_and_remove"
-        android:layout_width="@dimen/dim_40dp"
-        android:layout_height="@dimen/dim_40dp"
-        android:background="@color/white"
+        android:layout_width="@dimen/dim_24dp"
+        android:layout_height="20dp"
+        android:button="@drawable/checked"
+        android:background="@drawable/favourite"
+        android:layout_marginEnd="@dimen/dim_4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!--<ProgressBar-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginTop="80dp"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent" />-->
 
     <ImageView
         android:id="@+id/article_adapter_iv_post_image"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/dim_130dp"
         android:adjustViewBounds="true"
         android:minHeight="200dp"
+
+        
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/article_adapter_tv_title" />

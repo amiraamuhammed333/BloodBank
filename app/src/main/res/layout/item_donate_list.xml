@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/dim_100dp"
     android:layout_margin="@dimen/dim_4dp"
     android:background="@drawable/rectanglecurved">
 
@@ -12,74 +12,89 @@
         android:id="@+id/donate_item_tv_user"
         android:layout_width="@dimen/dim_200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginTop="@dimen/dim_4dp"
         android:text="name"
+        android:layout_marginStart="@dimen/dim_30dp"
+        android:layout_marginEnd="@dimen/dim_4dp"
         android:textColor="@color/black"
-        android:textSize="@dimen/txt_15sp"
-        app:layout_constraintEnd_toStartOf="@id/donate_item_tv_blood_type"
-        app:layout_constraintStart_toEndOf="@id/donate_item_btn_details"
+        android:textSize="@dimen/txt_12sp"
+       app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/donate_item_tv_hospital"
         android:layout_width="@dimen/dim_200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginTop="@dimen/dim_8dp"
         android:text="@string/hospital"
         android:textColor="@color/black"
-        android:textSize="@dimen/txt_15sp"
-        app:layout_constraintEnd_toStartOf="@id/donate_item_tv_blood_type"
-        app:layout_constraintStart_toEndOf="@id/donate_item_btn_details"
+        android:textSize="@dimen/txt_12sp"
+        android:layout_marginStart="@dimen/dim_30dp"
+        android:layout_marginEnd="@dimen/dim_4dp"
+        app:layout_constraintBottom_toTopOf="@id/donate_item_tv_city"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/donate_item_tv_user" />
 
     <TextView
         android:id="@+id/donate_item_tv_city"
         android:layout_width="@dimen/dim_200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginTop="@dimen/dim_8dp"
         android:text="@string/city"
         android:textColor="@color/black"
-        android:textSize="@dimen/txt_15sp"
-        app:layout_constraintEnd_toStartOf="@id/donate_item_tv_blood_type"
-        app:layout_constraintStart_toEndOf="@id/donate_item_btn_details"
+        android:textSize="@dimen/txt_12sp"
+        android:layout_marginStart="@dimen/dim_30dp"
+        android:layout_marginEnd="@dimen/dim_4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/donate_item_tv_hospital" />
 
 
     <TextView
         android:id="@+id/donate_item_tv_blood_type"
         android:layout_width="@dimen/dim_70dp"
-        android:layout_height="@dimen/dim_100dp"
+        android:layout_height="@dimen/dim_70dp"
         android:layout_marginEnd="@dimen/dim_4dp"
+        android:gravity="center"
         android:background="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/donate_item_btn_details"
-        android:layout_width="@dimen/dim_80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_width="@dimen/dim_70dp"
+        android:layout_height="@dimen/dim_40dp"
+        android:layout_marginBottom="@dimen/dim_8dp"
         android:gravity="center"
+        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginStart="@dimen/dim_4dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
         android:text="@string/details"
         android:textColor="@color/black"
-        android:textSize="@dimen/txt_12sp"
+        android:textSize="@dimen/txt_10sp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@id/donate_item_btn_call"/>
+
 
     <Button
         android:id="@+id/donate_item_btn_call"
-        android:layout_width="@dimen/dim_80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/dim_8dp"
-        android:layout_marginBottom="@dimen/dim_8dp"
+        android:layout_width="@dimen/dim_70dp"
+        android:layout_height="31dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginBottom="@dimen/dim_4dp"
+        android:layout_marginTop="@dimen/dim_30dp"
         android:background="@color/green"
-        android:drawableStart="@drawable/ic_call"
+        android:layout_marginStart="@dimen/dim_4dp"
         android:gravity="center"
         android:text="@string/call"
         android:textColor="@color/white"
-        android:textSize="@dimen/txt_12sp"
+        android:textSize="@dimen/txt_10sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/donate_item_btn_call"
         app:layout_constraintStart_toStartOf="parent" />
 
 

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_width="@dimen/dim_170dp"
+        android:layout_height="@dimen/dim_170dp"
+        android:background="@drawable/logoo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dim_8dp"
+        android:id="@+id/contact_us_iv_logo"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_30dp"
+        android:id="@+id/contact_us_tv_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_iv_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle"
+        android:drawableEnd="@drawable/ic_call1"
+        android:text="@string/_01097571186"
+        android:textColor="@color/black"
+        android:paddingStart="@dimen/dim_16dp"
+        android:paddingTop="@dimen/dim_4dp"
+        android:textSize="@dimen/dim_18sp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+        />
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_30dp"
+        android:id="@+id/contact_us_tv_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle"
+        android:text="ebda333@yahoo.com"
+        android:textColor="@color/black"
+        android:drawableEnd="@drawable/ic_email"
+        android:textSize="@dimen/dim_18sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:paddingTop="@dimen/dim_4dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"
+
+
+
+
+
+        />
+
+    <ImageButton
+        android:layout_width="@dimen/dim_50dp"
+        android:layout_height="@dimen/dim_50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_email"
+        android:layout_marginTop="@dimen/dim_16dp"
+        android:id="@+id/contact_us_ib_facebook"
+        android:layout_marginStart="@dimen/dim_16dp"
+        android:src="@drawable/facebook"
+
+        />
+
+    <ImageButton
+        android:layout_width="@dimen/dim_50dp"
+        android:layout_height="@dimen/dim_50dp"
+        app:layout_constraintStart_toEndOf="@id/contact_us_ib_facebook"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_email"
+        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginStart="@dimen/dim_4dp"
+        android:id="@+id/contact_us_ib_tweeter"
+        android:src="@drawable/twitter"
+        />
+
+    <ImageButton
+        android:layout_width="@dimen/dim_50dp"
+        android:layout_height="@dimen/dim_50dp"
+        app:layout_constraintStart_toEndOf="@id/contact_us_ib_tweeter"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_email"
+        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginStart="@dimen/dim_4dp"
+        android:id="@+id/contact_us_ib_youtube"
+        android:src="@drawable/youtube"
+        />
+
+    <ImageButton
+        android:layout_width="@dimen/dim_50dp"
+        android:layout_height="@dimen/dim_50dp"
+        app:layout_constraintStart_toEndOf="@id/contact_us_ib_youtube"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_email"
+        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginStart="@dimen/dim_4dp"
+        android:id="@+id/contact_us_ib_instegram"
+        android:src="@drawable/instegram"
+        />
+
+    <ImageButton
+        android:layout_width="@dimen/dim_50dp"
+        android:layout_height="@dimen/dim_50dp"
+        app:layout_constraintStart_toEndOf="@id/contact_us_ib_instegram"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_email"
+        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginStart="@dimen/dim_4dp"
+        android:id="@+id/contact_us_ib_whats"
+        android:src="@drawable/whats"
+        />
+
+
+    <ImageButton
+        android:layout_width="@dimen/dim_50dp"
+        android:layout_height="@dimen/dim_50dp"
+        app:layout_constraintStart_toEndOf="@id/contact_us_ib_whats"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_email"
+        android:layout_marginTop="@dimen/dim_16dp"
+        android:layout_marginStart="@dimen/dim_4dp"
+        android:id="@+id/contact_us_ib_google"
+        android:src="@drawable/google"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_30dp"
+        android:id="@+id/contact_us_tv_contact"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_ib_instegram"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/contact_us"
+        android:gravity="center"
+        android:layout_margin="@dimen/dim_8dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        />
+
+
+
+
+
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_30dp"
+        android:id="@+id/contact_us_et_message_address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_tv_contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle"
+        android:hint="@string/message_address"
+        android:inputType="text"
+        android:paddingStart="@dimen/dim_8dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_30dp"
+        android:id="@+id/contact_us_et_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_et_message_address"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle"
+        android:hint="@string/message"
+        android:inputType="text"
+        android:paddingStart="@dimen/dim_8dp"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        android:layout_marginTop="@dimen/dim_8dp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_40dp"
+        android:id="@+id/contact_us_btn_send"
+        app:layout_constraintTop_toBottomOf="@id/contact_us_et_message"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/send"
+        android:layout_margin="@dimen/dim_8dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/white"
+        />
+
+
+
+</android.support.constraint.ConstraintLayout>

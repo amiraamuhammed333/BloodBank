@@ -9,11 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.bloodbank.Data.api.APIManger;
-import com.example.bloodbank.Data.model.Auth.AuthResponse;
-import com.example.bloodbank.Data.model.forget.ForgetPassword;
+import com.example.bloodbank.data.api.APIManger;
 import com.example.bloodbank.R;
 import com.example.bloodbank.View.Fragment.BaseFragment;
+import com.example.bloodbank.data.model.Auth.ResetResponse;
+import com.google.android.gms.common.api.Api;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,22 +45,26 @@ public class ForgetFragment extends BaseFragment {
         return view;
     }
 
+    private void getPhone() {
+    }
+
 
     @Override
     public void onDestroyView() {
         super.onDestroyView ();
         unbinder.unbind ();
     }
+    String phone;
 
     @OnClick(R.id.forget_fragment_btn)
     public void onViewClicked(View view) {
         if (view.getId () == R.id.forget_fragment_btn){
 
-            String phone = forgetFragmentEt.getText ().toString ();
+             phone = forgetFragmentEt.getText ().toString ();
 
             if(validateSend(phone)){
                 //do login
-                send (phone);
+                send ();
             }
 
 
@@ -83,48 +87,36 @@ public class ForgetFragment extends BaseFragment {
         return true;
     }
 
-    private void send(String phone) {
-
-
-        APIManger.getApis ().send ( phone ).enqueue ( new Callback<ForgetPassword> () {
+    public void send(){
+        APIManger.getApis().getPhone(phone).enqueue(new Callback<ResetResponse>() {
             @Override
-            public void onResponse(Call<ForgetPassword> call, Response<ForgetPassword> response) {
-
+            public void onResponse(Call<ResetResponse> call, Response<ResetResponse> response) {
 
                 if(response.isSuccessful ()) {
 
-                    Toast.makeText ( getActivity (),response.body ().getMsg (),Toast.LENGTH_LONG ).show ();
+                    Toast.makeText(getActivity(), response.body().getMsg(), Toast.LENGTH_LONG).show();
 
-                    fragment= new ChangeNumberFragment ();
+                    fragment = new ChangeNumberFragment();
 
 
-                   getActivity ()
+                    getActivity ()
                             .getSupportFragmentManager ()
                             .beginTransaction ()
                             .replace (R.id.fram,fragment  )
-                            .commit ();
-
-
-
-                }
+                            .commit (); }
 
                 else{
                     Toast.makeText ( getActivity (),response.body ().getMsg (),Toast.LENGTH_LONG ).show ();
 
                 }
-
-
-
             }
-
             @Override
-            public void onFailure(Call<ForgetPassword> call, Throwable t) {
+            public void onFailure(Call<ResetResponse> call, Throwable t) {
 
-                Toast.makeText(getActivity (), t.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
-        } );
-
+        });
+    }
 
 
 
@@ -139,4 +131,4 @@ public class ForgetFragment extends BaseFragment {
 
 
 
-}
+

@@ -1,31 +1,258 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:orientation="vertical"
+    >
 
 
 
-
-
-
-    <android.support.v7.widget.RecyclerView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/details_fragment_recycler_view_"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/txt_15sp"
+        android:id="@+id/detail_fragment_donation_request"
+        android:text="@string/donation_request"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+
+        />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:id="@+id/detail_fragment_name"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
 
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/age"
+        android:id="@+id/detail_fragment_age"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
 
 
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/blood_type"
+        android:id="@+id/_detail_fragment_blood_type"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/number_of_bags_required"
+        android:textSize="@dimen/txt_15sp"
+        android:id="@+id/detail_fragment_number_of_bag_required"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hospital"
+        android:id="@+id/detail_fragment_hospital"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hospital_address"
+        android:textSize="@dimen/txt_15sp"
+        android:id="@+id/detail_fragment_hospital_address"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:id="@+id/detail_fragment_phone"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/details"
+        android:maxLines="10"
+        android:id="@+id/detail_fragment_details"
+        android:textSize="@dimen/txt_15sp"
+        android:paddingStart="@dimen/dim_8dp"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dim_200dp"
+        android:id="@+id/detail_fragment_map_view"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dim_1dp"
+        android:background="@color/grey"
+        android:layout_marginStart="@dimen/dim_8dp"
+        android:layout_marginEnd="@dimen/dim_8dp"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dim_8dp"
+        android:textSize="@dimen/txt_15sp"
+        android:drawableStart="@drawable/ic_call"
+        android:background="@color/green"
+        android:id="@+id/detail_fragment_call"
+        android:paddingStart="@dimen/dim_8dp"
+        android:text="@string/call"
+        android:textColor="@color/white"
 
         />
 
 
 
 
-</android.support.constraint.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>

@@ -37,19 +37,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:background="@drawable/rectangle"
-        android:hint="@string/phone"
+        android:hint="@string/pin_code"
         android:paddingStart="@dimen/dim_8dp"
         android:textColorHint="@color/black"
         android:inputType="phone"
         android:textSize="@dimen/txt_15sp"
-        android:id="@+id/changenumber_fragment_et_phone"
+        android:id="@+id/changenumber_fragment_et_pin_code"
         />
 
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="@dimen/dim_40dp"
-        app:layout_constraintTop_toBottomOf="@id/changenumber_fragment_et_phone"
+        app:layout_constraintTop_toBottomOf="@id/changenumber_fragment_et_pin_code"
         android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
