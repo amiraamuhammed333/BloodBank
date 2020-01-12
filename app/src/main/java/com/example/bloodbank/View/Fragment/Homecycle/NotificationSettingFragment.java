@@ -43,10 +43,7 @@ public class NotificationSettingFragment extends BaseFragment {
     @BindView(R.id.notification_setting_fragment_rv_government)
     RecyclerView notificationSettingFragmentRvGovernment;
     Unbinder unbinder;
-    NotificationSettingAdapter notificationSettingAdapter;
-    List<NotificationSettingData> notificationSettingDataList = new ArrayList<>();
     GridLayoutManager gridLayoutManager;
-    GeneralResponseData generalResponseData;
     @BindView(R.id.notification_setting_fragment_btn_save)
     Button notificationSettingFragmentBtnSave;
     private List<String> bloodTypes = new ArrayList<>(), governorates = new ArrayList<>();
@@ -56,9 +53,7 @@ public class NotificationSettingFragment extends BaseFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_notification_setting, container, false);
         unbinder = ButterKnife.bind(this, view);
         setUpActivity();
@@ -73,107 +68,64 @@ public class NotificationSettingFragment extends BaseFragment {
         APIManger.getApis().setNotificationSetting("W4mx3VMIWetLcvEcyF554CfxjZHwdtQldbdlCl2XAaBTDIpNjKO1f7CHuwKl", governorateAdapter.newId, bloodAdapter.newId).enqueue(new Callback<NotificationSettingResponse>() {
             @Override
             public void onResponse(Call<NotificationSettingResponse> call, Response<NotificationSettingResponse> response) {
-                try {
-                    if (response.body().getStatus() == 1) {
-                        Toast.makeText(getActivity(), response.body().getMsg(), Toast.LENGTH_LONG).show();
-                    }
-                } catch (Exception e) {
-                }
-            }
-
+                try { if (response.body().getStatus() == 1) {
+                        Toast.makeText(getActivity(), response.body().getMsg(), Toast.LENGTH_LONG).show(); }
+                } catch (Exception e) { } }
             @Override
             public void onFailure(Call<NotificationSettingResponse> call, Throwable t) {
-                try {
-                } catch (Exception e) {
-                }
-            }
-        });
+                try { } catch (Exception e) { } }});
     }
 
     private void initRecyclerView() {
         gridLayoutManager = new GridLayoutManager(getContext(), 3);
         notificationSettingFragmentRVBloodType.setLayoutManager(new GridLayoutManager(getContext(), 3));
         notificationSettingFragmentRvGovernment.setLayoutManager(new GridLayoutManager(getContext(), 3));
-//        notificationSettingAdapter= new NotificationSettingAdapter();
-//        notificationSettingFragmentRVBloodType.setAdapter(notificationSettingAdapter);
-//        notificationSettingFragmentRvGovernment.setAdapter(notificationSettingAdapter);
     }
 
     private void getNotificationSetting() {
         APIManger.getApis().getNotificationSetting("W4mx3VMIWetLcvEcyF554CfxjZHwdtQldbdlCl2XAaBTDIpNjKO1f7CHuwKl").enqueue(new Callback<NotificationSettingResponse>() {
             @Override
             public void onResponse(Call<NotificationSettingResponse> call, Response<NotificationSettingResponse> response) {
-                try {
-                    if (response.body().getStatus() == 1) {
+                try { if (response.body().getStatus() == 1) {
                         bloodTypes = response.body().getData().getBloodTypes();
                         governorates = response.body().getData().getGovernorates();
                         getBloodTypes();
-                        getGovernorates();
-                    }
-                } catch (Exception e) {
-                }
-            }
-
+                        getGovernorates(); } }
+                catch (Exception e) { } }
             @Override
             public void onFailure(Call<NotificationSettingResponse> call, Throwable t) {
-                try {
-                } catch (Exception e) {
-                }
-            }
-        });
-    }
+                try { } catch (Exception e) { } }}); }
 
     private void getBloodTypes() {
         APIManger.getApis().getBloodTypes().enqueue(new Callback<GeneralResponse>() {
             @Override
             public void onResponse(Call<GeneralResponse> call, Response<GeneralResponse> response) {
-                try {
-                    bloodAdapter = new NotificationSettingAdapter(getActivity(), getActivity(), response.body().getData(), bloodTypes);
-                    notificationSettingFragmentRVBloodType.setAdapter(bloodAdapter);
-                } catch (Exception e) {
-
-                }
-            }
-
+                try { bloodAdapter = new NotificationSettingAdapter(getActivity(), getActivity(), response.body().getData(), bloodTypes);
+                    notificationSettingFragmentRVBloodType.setAdapter(bloodAdapter); }
+                catch (Exception e) { } }
             @Override
-            public void onFailure(Call<GeneralResponse> call, Throwable t) {
-            }
-        });
-    }
+            public void onFailure(Call<GeneralResponse> call, Throwable t) { }}); }
 
     private void getGovernorates() {
         APIManger.getApis().getGovernment().enqueue(new Callback<GeneralResponse>() {
             @Override
             public void onResponse(Call<GeneralResponse> call, Response<GeneralResponse> response) {
-                try {
-                    governorateAdapter = new NotificationSettingAdapter(getActivity(), getActivity(), response.body().getData(), governorates);
-                    notificationSettingFragmentRvGovernment.setAdapter(governorateAdapter);
-                } catch (Exception e) {
-
-                }
-            }
-
+                try { governorateAdapter = new NotificationSettingAdapter(getActivity(), getActivity(), response.body().getData(), governorates);
+                    notificationSettingFragmentRvGovernment.setAdapter(governorateAdapter); }
+                catch (Exception e) { } }
             @Override
-            public void onFailure(Call<GeneralResponse> call, Throwable t) {
-            }
-        });
-    }
-
+            public void onFailure(Call<GeneralResponse> call, Throwable t) { }}); }
 
     @Override
     public void onBack() {
-        super.onBack();
-    }
+        super.onBack(); }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
-    }
+        unbinder.unbind(); }
 
     @OnClick(R.id.notification_setting_fragment_btn_save)
     public void onClick() {
-        setNotificationSetting();
-
-    }
+        setNotificationSetting(); }
 }
